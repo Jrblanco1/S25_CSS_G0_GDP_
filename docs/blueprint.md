@@ -2,11 +2,11 @@
 
 ## Core Features:
 
-- User Authentication: Implement secure user login and profile management with a form to store user data locally for development and testing. No database implementation is required.
+- User Authentication: Secure user login and profile management using a simple form to store user data. To use as sample for local development/testing purposes only. No actual database implementation required.
 - Data Visualization: Display financial data, including expenses and earnings, using interactive pie charts.
-- AI-Powered Financial Advisor: Implement an AI chat interface where users can ask financial advice questions and receive recommendations based on analyzed data, using an LLM tool to incorporate expense and earning data.
-- AI Model Training: Train a Generative AI model to analyze user expense and earning data for personalized financial advice.
-- Bank API Simulation: Integrate with a free and open Bank API to simulate real-time financial data for testing.
+- AI-Powered Financial Advisor: Implement an AI chat interface where users can ask financial advice questions and receive recommendations based on analyzed data. This will use an LLM tool to reason about when to incorporate expense and earning data to inform its recommendations.
+- AI Model Training: Train a Generative AI model to analyze user expense and earning data to provide personalized financial advice.
+- Bank API Simulation: Integrate with a free and open Bank API to simulate real-time financial data for testing purposes.
 
 ## Style Guidelines:
 
