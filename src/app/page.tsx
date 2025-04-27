@@ -48,12 +48,27 @@ export default function Home() {
     setFinancialData(initialData);
   }, []);
 
-  const handleLogin = () => {
-    if (email === 'holubnyc@uiwtx.edu' && password === 'Qwerty1234') {
-      setIsLoggedIn(true);
-      setLoginError(false);
-    } else {
-      setLoginError(true);
+  const handleLogin = async (event: React.FormEvent) => {
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email, password}),
+      });
+
+      const data = await response.json();
+      console.log('Login response:', data);
+      if (response.ok) {
+        setIsLoggedIn(true);
+        setLoginError(false);
+      } else {
+        setLoginError(true);
+      } }
+      catch (error) {
+        console.error('Error during login:', error);
+        setLoginError(true);    
     }
   };
 
@@ -97,7 +112,7 @@ export default function Home() {
                 <Alert variant="destructive">
                   <Icons.close className="h-4 w-4"/>
                   <AlertTitle>Error</AlertTitle>
-                  <AlertDescription>Invalid username or password. Please try again.</AlertDescription>
+                  <AlertDescription>Invalid username or passw {loginError}</AlertDescription>
                 </Alert>
               )}
             </CardContent>
