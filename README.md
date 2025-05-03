@@ -1,7 +1,7 @@
 
 # 💸 AI Financial
 
-**AI Financial** is an intelligent financial web application that combines data visualization and real-time AI advice to help users better understand and manage their money. Built with **React (TypeScript)** and **Tailwind CSS**, it leverages **Gemini AI** for financial recommendations and a **PostgreSQL** backend for secure data handling.
+**AI Financial** is an intelligent financial web application that combines data visualization and real-time AI which helps users better understand and manage their money. Built with **React (TypeScript)** and **Tailwind CSS**, it leverages **Gemini AI** for financial recommendations and a **PostgreSQL** backend for secure data handling.
 
 ---
 
@@ -134,10 +134,9 @@ Data is fetched and transformed using utilities and services located in:
 ## ✅ TODO / Future Plans
 
 - Add authentication and user accounts
-- Connect to real bank APIs (e.g., Plaid)
+- Connect to real bank APIs
 - Export reports in PDF/CSV
 - Notification system for budget limits
-- Offline PWA support
 
 ---
 
@@ -146,7 +145,6 @@ Data is fetched and transformed using utilities and services located in:
 - **Frontend:** React (TypeScript), Tailwind CSS
 - **Backend:** PostgreSQL (via Node/TS fetch)
 - **AI:** Gemini API
-- **Deployment:** Vercel, Netlify, or custom VPS (planned)
 
 ---
 
