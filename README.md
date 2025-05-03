@@ -1,64 +1,138 @@
 # S25_CSS_G3_JB_MG_
 
-# [Project Title]
+💸 AI Financial
+AI Financial is an intelligent financial web application that combines data visualization and real-time AI tool which helps users better understand and visualize, and manage their money. Built with React (TypeScript) and Tailwind CSS, it leverages Gemini AI for financial recommendations and a PostgreSQL backend for secure data handling.
 
-## Overview
-Provide a clear description of your project, its objectives, and key functionalities.
-- **Objective:** Replace the final exam by delivering a comprehensive solution (software-based or combined with hardware using a Raspberry Pi Kit and small components) that meets the course outcomes.
-- **Scope:** Describe the systems and components covered (e.g., endpoint protection, cloud security, IoT integration).
+🧠 Key Features
+AI-Powered Advisor
+Get intelligent advice through Gemini API using src/ai/flows/financial-advice.ts.
 
-## Deliverables
-- **Codebase:** All source code files organized by functionality.
-- **Documentation:**
-  - A comprehensive [README.md](#readme) with setup and usage instructions.
-  - A GitHub Wiki detailing the project phases (Conceptualization, Design, Development, Testing, Review, Finalization), design decisions, progress updates, and testing results.
-- **Project Tracking:**
-  - A GitHub Project board that tracks milestones and tasks (use columns such as “To Do,” “In Progress,” “Review,” and “Completed”).
-- **Video Deliverables:**
-  - A series of 15‑minute demonstration videos, uploaded via Cengage Bongo (with links documented in the Wiki).
-  - Videos will be peer reviewed by classmates.
+Secure PostgreSQL Connection
+Database logic lives in src/connDb/pgsql.ts with credentials loaded from environment variables.
 
-## Repository Structure
+Clean UI with Tailwind CSS
+Responsive components (src/components/ui) and utility-first styling.
 
-/ (root)
+Modular Architecture
+Organized code with clear separation for AI logic, database, services, and hooks.
 
-├── README.md         # Project overview, setup instructions, and documentation links
+Data Visualization
+Visual financial data representation using financial-data-display.tsx.
 
-├── /src              # Source code organized by modules/features
+🗂️ Project Structure
+bash
+Copy
+Edit
+src/
+├── ai/                  # Gemini AI logic
+│   ├── flows/           # AI functions and instances
+│   │   ├── financial-advice.ts
+│   │   ├── ai-instance.ts
+│   │   └── dev.ts
+│
+├── app/                 # App pages and routing
+│   ├── api/fetchData/   # API route for fetching financial data
+│   ├── route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/          # UI components
+│   ├── ui/
+│   │   ├── financial-data-display.tsx
+│   │   └── icons.ts
+│
+├── connDb/              # Database connection
+│   └── pgsql.ts
+│
+├── hooks/               # Custom React hooks
+│   ├── use-mobile.tsx
+│   └── use-toast.ts
+│
+├── lib/                 # Utility functions
+│   └── utils.ts
+│
+├── services/            # Business logic services
+│   └── bank.ts
 
-├── /docs             # Additional documentation (design diagrams, user guides, etc.)
+.env                     # Environment variables (not committed)
+README.md                # Project documentation
+tailwind.config.ts       # TailwindCSS configuration
+tsconfig.json            # TypeScript configuration
+package.json             # Project metadata & scripts
+🧪 Environment Setup
+Create a .env file at the root of the project with the following content:
 
-├── /tests            # Test scripts and sample data
+env
+Copy
+Edit
+DB_USER=your_user
+DB_HOST=your_host
+DB_NAME=your_database
+DB_PASSWORD=your_password
+DB_PORT=5432
 
-├── .github
+GEMINI_API_KEY=your_gemini_api_key
+⚠️ Make sure .env is included in .gitignore to keep sensitive info private.
 
-│   ├── ISSUE_TEMPLATE.md    # Template for bug/issue reports
+📦 Installation
+Clone the repository:
 
-│   └── PULL_REQUEST_TEMPLATE.md  # Guidelines for contributing
+bash
+Copy
+Edit
+git clone https://github.com/your-username/ai-financial.git
+cd ai-financial
+Install dependencies:
 
-└── LICENSE
+bash
+Copy
+Edit
+npm install
+Run the development server:
 
-## Setup & Installation
-1. **Prerequisites:**  
-   - List required software, libraries, or hardware configurations (e.g., details on the Raspberry Pi setup if used).
-2. **Installation Steps:**  
-   - Step-by-step instructions for cloning the repository, installing dependencies, and configuring the environment.
-3. **Usage:**  
-   - How to run the project (include necessary commands and configuration details).
+bash
+Copy
+Edit
+npm run dev
+Make sure your database is running and accessible via the .env values.
 
-## Contribution Guidelines
-- Follow established coding standards and best practices.
-- Use a consistent branching strategy (e.g., feature branches with a main/master branch).
-- Regularly update the GitHub Project board and Wiki with progress and changes.
+🧠 Gemini AI Integration
+The ai-instance.ts file initializes the Gemini API client using your key. The core logic for generating advice based on user financial data is in:
 
-## Testing & Validation
-- **Automated Testing:**  
-  - Describe any automated test scripts (if available).
-- **Manual Testing:**  
-  - Outline manual testing procedures and expected outcomes.
+src/ai/flows/financial-advice.ts
 
-## License
-- Specify the project's license.
+This module fetches data and prompts Gemini to generate financial suggestions.
 
-## Additional Notes
-- Include any project-specific considerations, future enhancements, or known issues.
+📈 Visualization
+Visual financial breakdowns (e.g., pie or bar charts of earnings/expenses) are rendered via:
+
+src/components/ui/financial-data-display.tsx
+
+Data is fetched and transformed using utilities and services located in:
+
+src/services/bank.ts
+
+src/lib/utils.ts
+
+✅ TODO / Future Plans
+Add authentication and user accounts
+
+Connect to real bank APIs
+
+Export reports in PDF/CSV
+
+Notification system for budget limits
+
+🛠️ Tech Stack
+Frontend: React (TypeScript), Tailwind CSS
+
+Backend: PostgreSQL (via Node/TS fetch)
+
+AI: Gemini API
+
+🤝 Contribution
+Pull requests and issue submissions are welcome! Please fork the repository and open a PR with changes.
+
+📄 License
+This project is licensed under the MIT License.
