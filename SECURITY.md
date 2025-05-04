@@ -9,6 +9,8 @@ We currently support security updates for the latest stable release of **AI Fina
 | PostgreSQL   |    16.8     | ✅        |
 | Tailwind CSS |  ^3.4.17    | ✅        |
 | Node.js      |   18.9.1    | ✅        |
+| React        |   18.3.1    | ✅        |
+| TypeScript   |  ^5         | ✅        |
 | Older        | < listed    | ❌        |
 
 ## Reporting a Vulnerability
