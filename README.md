@@ -90,8 +90,8 @@ GEMINI_API_KEY=your_gemini_api_key
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/ai-financial.git
-   cd ai-financial
+   git clone https://github.com/Jrblanco1/S25_CSS_G0_GDP_.git
+   cd S25_CSS_G0_GDP_
    ```
 
 2. **Install dependencies:**
