@@ -50,7 +50,7 @@ export default function Home() {
 
   const handleLogin = async (event: React.FormEvent) => {
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/fetchData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,6 @@ export default function Home() {
         setLoginError(true);
       } }
       catch (error) {
-        console.error('Error during login:', error);
         setLoginError(true);    
     }
   };
@@ -112,7 +111,7 @@ export default function Home() {
                 <Alert variant="destructive">
                   <Icons.close className="h-4 w-4"/>
                   <AlertTitle>Error</AlertTitle>
-                  <AlertDescription>Invalid username or passw {loginError}</AlertDescription>
+                  <AlertDescription>Invalid username or password try again!</AlertDescription>
                 </Alert>
               )}
             </CardContent>
